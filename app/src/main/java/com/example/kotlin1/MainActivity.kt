@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //присваиваем кнопкам реальные id
-        val textS: TextView = findViewById(R.id.textHeader)
         val Play: Button = findViewById(R.id.buttonPlay)
         val Menu1: Button = findViewById(R.id.buttonMenu)
         val Exit1: Button = findViewById(R.id.buttonExit)
@@ -38,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         Exit1.setOnClickListener {
             System.exit(0)
         }
+
 
     }
 }
