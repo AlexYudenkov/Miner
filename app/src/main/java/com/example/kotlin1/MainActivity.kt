@@ -9,8 +9,7 @@ import java.util.ArrayList
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -25,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val Play: Button = findViewById(R.id.buttonPlay)
         val Menu1: Button = findViewById(R.id.buttonMenu)
         val Exit1: Button = findViewById(R.id.buttonExit)
+        //val Rocet: ImageView = findViewById(R.id.rocet)
         //textS?.setText("Frrfra")
         //создаем экземпляр листенера
         Play.setOnClickListener {
