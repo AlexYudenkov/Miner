@@ -1,17 +1,17 @@
 package com.example.kotlin1
 
 import android.content.Intent
-import android.graphics.Color
+import android.graphics.drawable.Animatable
+import android.graphics.drawable.Drawable
+
+import java.util.ArrayList
+
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.system.exitProcess
-import com.example.kotlin1.MainActivity2 as MainActivity2
+import java.util.*
 
 
 //называем кнопки
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val Play: Button = findViewById(R.id.buttonPlay)
         val Menu1: Button = findViewById(R.id.buttonMenu)
         val Exit1: Button = findViewById(R.id.buttonExit)
+        //val Rocet: ImageView = findViewById(R.id.rocet)
         //textS?.setText("Frrfra")
         //создаем экземпляр листенера
         Play.setOnClickListener {
@@ -37,7 +38,25 @@ class MainActivity : AppCompatActivity() {
         Exit1.setOnClickListener {
             System.exit(0)
         }
+        val imageViews: MutableList<ImageView> =
+            ArrayList()
 
+        imageViews.add(findViewById<View>(R.id.imageView2) as ImageView)
 
+        animateImageViews(imageViews)
     }
-}
+
+    private fun animateImageViews(imageViews: List<ImageView>) {
+        for (imageView in imageViews) {
+            animateImageView(imageView)
+        }
+    }
+
+    private fun animateImageView(imageView: ImageView) {
+        val drawable = imageView.drawable
+        if (drawable is Animatable) {
+            val animatable = drawable as Animatable
+            animatable.start()
+        }
+    }
+    }
