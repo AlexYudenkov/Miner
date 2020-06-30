@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,22 +22,37 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //присваиваем кнопкам реальные id
-        val Play: Button = findViewById(R.id.buttonPlay)
-        val Menu1: Button = findViewById(R.id.buttonMenu)
-        val Exit1: Button = findViewById(R.id.buttonExit)
-        //textS?.setText("Frrfra")
-        //создаем экземпляр листенера
+        val Play: ImageView = findViewById(R.id.start)
+        val Menu1: ImageView = findViewById(R.id.menu)
+        val Exit1: ImageView = findViewById(R.id.exit)
+
         Play.setOnClickListener {
             val randomIntent = Intent(this, MainActivity2::class.java)
-            startActivity(randomIntent)
-        }
-        Menu1.setOnClickListener{
-            val menuInten = Intent(this, SettingsActivity::class.java )
-            startActivity(menuInten)
-        }
+            startActivity(randomIntent)}
+
+        Menu1.setOnClickListener {
+                val menuInten = Intent(this, SettingsActivity::class.java)
+                startActivity(menuInten)
+            }
+                //создаем экземпляр листенера
+
+
         Exit1.setOnClickListener {
-            System.exit(0)
-        }
+                    System.exit(0)
+                }
+    }
+
+    fun start_game(view: View) {
+
+
+    }
+
+    fun goToSettings(view: View) {
+
+
+    }
+
+    fun Exit_game(view: View) {
 
 
     }
