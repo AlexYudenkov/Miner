@@ -22,6 +22,13 @@
         app:srcCompat="@drawable/start"
         android:contentDescription="TODO" />
 
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#FFC107"
+        android:text="@string/menu"
     <ImageView
         android:id="@+id/menu"
         android:layout_width="216dp"
@@ -29,6 +36,8 @@
         android:onClick="goToSettings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent" />
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +45,13 @@
         app:srcCompat="@drawable/menu"
         android:contentDescription="TODO" />
 
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#FF9800"
+        android:text="@string/exit"
     <ImageView
         android:id="@+id/exit"
         android:layout_width="216dp"
@@ -43,11 +59,21 @@
         android:onClick="Exit_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/exit"
         android:contentDescription="TODO" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="376dp"
+        android:layout_height="394dp"
+        app:srcCompat="@drawable/beta_bur0_3"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="233dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

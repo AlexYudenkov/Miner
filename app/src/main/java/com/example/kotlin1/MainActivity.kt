@@ -1,18 +1,18 @@
 package com.example.kotlin1
 
 import android.content.Intent
-import android.graphics.Color
+import android.graphics.drawable.Animatable
+import android.graphics.drawable.Drawable
+
+import java.util.ArrayList
+
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.system.exitProcess
-import com.example.kotlin1.MainActivity2 as MainActivity2
+import java.util.*
 
 
 //называем кнопки
@@ -22,10 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //присваиваем кнопкам реальные id
-        val Play: ImageView = findViewById(R.id.start)
-        val Menu1: ImageView = findViewById(R.id.menu)
-        val Exit1: ImageView = findViewById(R.id.exit)
-
+        val Play: Button = findViewById(R.id.buttonPlay)
+        val Menu1: Button = findViewById(R.id.buttonMenu)
+        val Exit1: Button = findViewById(R.id.buttonExit)
+        //textS?.setText("Frrfra")
+        //создаем экземпляр листенера
         Play.setOnClickListener {
             val randomIntent = Intent(this, MainActivity2::class.java)
             startActivity(randomIntent)}
@@ -38,22 +39,27 @@ class MainActivity : AppCompatActivity() {
 
 
         Exit1.setOnClickListener {
-                    System.exit(0)
-                }
+            System.exit(0)
+        }
+        val imageViews: MutableList<ImageView> =
+            ArrayList()
+
+        imageViews.add(findViewById<View>(R.id.imageView2) as ImageView)
+
+        animateImageViews(imageViews)
     }
 
-    fun start_game(view: View) {
-
-
+    private fun animateImageViews(imageViews: List<ImageView>) {
+        for (imageView in imageViews) {
+            animateImageView(imageView)
+        }
     }
 
-    fun goToSettings(view: View) {
-
-
+    private fun animateImageView(imageView: ImageView) {
+        val drawable = imageView.drawable
+        if (drawable is Animatable) {
+            val animatable = drawable as Animatable
+            animatable.start()
+        }
     }
-
-    fun Exit_game(view: View) {
-
-
     }
-}
